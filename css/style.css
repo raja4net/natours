@@ -1,179 +1,223 @@
-/*
-COLORS:
+@keyframes moveInLeft {
+  0% {
+    transform: translateX(-10rem);
+    opacity: 0;
+    /* opacity value of 0 makes it invisible at start */ }
+  80% {
+    transform: translateX(1rem);
+    opacity: 1; }
+  100% {
+    transform: translateX(0);
+    opacity: 1; } }
 
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
+@keyframes moveInRight {
+  0% {
+    transform: translateX(10rem);
+    opacity: 0; }
+  80% {
+    transform: translateX(-1rem);
+    opacity: 1; }
+  100% {
+    transform: translateX(0);
+    opacity: 1; } }
 
-*/
+@keyframes moveInBottom {
+  0% {
+    transform: translateY(3rem);
+    opacity: 0; }
+  100% {
+    transform: translateY(0);
+    opacity: 1; } }
 
-* ,
+*,
 *::before,
-*::after{
-    padding: 0;
-    margin: 0;
-    box-sizing: inherit /* inherits this value from body box-sizing property */
-}
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit; }
 
 html {
-    font-size: 62.5%; /*default font-size of browsers is 16px (100%), 62.5% means 10px */
-}
+  font-size: 62.5%;
+  /*default font-size of browsers is 16px (100%), 62.5% means 10px */ }
 
 body {
-    font-family: "Lato", sans-serif;
-    font-size: 1.6rem;
-    font-weight: 400;
-    line-height: 1.7;
-    color:#777;
-    padding: 3rem;
-    box-sizing: border-box
-}
+  box-sizing: border-box; }
 
-.header {
-    height: 95vh;
-    position: relative;
-    background-image: linear-gradient(to right bottom,#7ed56fd5,#28b485c7),url(../img/hero.jpg);
-    background-size: cover;
-    background-position: top;
-    clip-path: polygon(0 0,100% 0,100% 75vh,0 100%);
-}
-
-.header__logo-box {
-    top: 4rem;
-    left: 4rem;
-    position: absolute;
-    
-}
-
-.header__logo {
-    height: 3.5rem;
-    position: absolute;
-}
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem; }
 
 .heading-primary {
-    color: white;
-    text-transform: uppercase;
-    margin-bottom: 6rem;
-}
-
-.header__text-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    text-align: center;
-}
-
-.heading-primary--main {
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 6rem; }
+  .heading-primary--main {
     font-weight: 40rem;
     display: block;
     letter-spacing: 3.5rem;
     font-size: 6rem;
-    animation: moveInLeft 1s ease-out
-}
-
-.heading-primary--sub {
+    animation: moveInLeft 1s ease-out; }
+  .heading-primary--sub {
     font-weight: 70rem;
     display: block;
     letter-spacing: 1.75rem;
     font-size: 2rem;
-    animation: moveInRight 1s ease-out
-    
-}
+    animation: moveInRight 1s ease-out; }
 
-@keyframes moveInLeft {
-    0% {
-        transform: translateX(-10rem);
-        opacity: 0; /* opacity value of 0 makes it invisible at start */
-    }
-    80% {
-        transform: translateX(1rem);
-        opacity: 1;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
+.heading-secondary {
+  font-weight: 700;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  display: inline-block;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 0.2rem;
+  transition: all 0.2s; }
+  .heading-secondary:hover {
+    transform: skewX(15deg) skewY(2deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
 
-@keyframes moveInRight {
-    0% {
-        transform: translateX(10rem);
-        opacity: 0;
-    }
-    80% {
-        transform: translateX(-1rem);
-        opacity: 1;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
+.heading-tertiary {
+  font-weight: 700;
+  font-size: 1.6rem;
+  text-transform: uppercase; }
 
-.btn:link,
-.btn:visited {
-    text-transform:  uppercase;
-    text-decoration: none;
-    padding: 1.5rem 4rem;
-    display: inline-block;
-    border-radius: 10rem;
-    transition: all 0.2s;
-    position: relative;
-    color: grey
-}
+.paragraph {
+  font-size: 1.6rem; }
+  .paragraph:not(:last-child) {
+    margin-bottom: 3rem; }
+
+.u-center-text {
+  text-align: center; }
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem; }
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem; }
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem; }
+
+.header {
+  height: 95vh;
+  position: relative;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
+  .header__logo-box {
+    top: 4rem;
+    left: 4rem;
+    position: absolute; }
+  .header__logo {
+    height: 3.5rem;
+    position: absolute; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row::after {
+    content: "";
+    display: table; }
+  .row [class^="col-"] {
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 6rem) / 3); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 * 6rem) / 4); }
+  .row .col-2-of-3 {
+    width: calc(2* (100% - 2 * 6rem) / 3 + 6rem); }
+  .row .col-2-of-4 {
+    width: calc(2* (100% - 3 * 6rem) / 4 + 6rem); }
+  .row .col-3-of-4 {
+    width: calc(3 * (100% - 3 * 6rem) / 4 + 2  * 6rem); }
+
+.section-about {
+  background-color: #f7f7f7;
+  padding: 25rem 0;
+  margin-top: -20vh; }
+
+.btn:link, .btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all 0.2s;
+  position: relative;
+  color: #777; }
 
 .btn:hover {
-    transform: translateY(-0.3rem);
-    box-shadow: 0px 1rem 2rem rgba(0,0,0,0.2);
-}
+  transform: translateY(-0.3rem);
+  box-shadow: 0px 1rem 2rem rgba(0, 0, 0, 0.2); }
+  .btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0; }
 
 .btn:active {
-    transform: translateY(-0.1rem);
-    box-shadow: 0px 1rem 1rem rgba(0,0,0,0.2);
-}
-    
+  transform: translateY(-0.1rem);
+  box-shadow: 0px 1rem 1rem rgba(0, 0, 0, 0.2); }
 
 .btn--white {
-    background-color: white;
-    color: #777;
-}
+  background-color: white;
+  color: #777; }
+  .btn--white::after {
+    background-color: white; }
 
 .btn::after {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* to move this element behind button */
-    border-radius: 10rem;
-    top: 0rem;
-    left: 0rem;
-    transition: all 0.4s;
-}
-
-.btn--white::after {
-    background-color: white;
-}
-
-.btn:hover::after {
-    transform: scaleX(1.4) scaleY(1.6); 
-    opacity: 0;
-}
-
-@keyframes moveInBottom {
-    0% {
-        transform: translateY(3rem);
-        opacity: 0;
-    }
-    
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  /* to move this element behind button */
+  border-radius: 10rem;
+  top: 0rem;
+  left: 0rem;
+  transition: all 0.4s; }
 
 .btn--animated {
-    animation: moveInBottom 0.5s ease-out 0.75s; /*0.75s is the delay bfore animation appears */
-    animation-fill-mode: backwards; /*to make button invisible at page load */
-}
+  animation: moveInBottom 0.5s ease-out 0.75s;
+  /*0.75s is the delay bfore animation appears */
+  animation-fill-mode: backwards;
+  /*to make button invisible at page load */ }
+
+.btn-text:link, .btn-text:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: #55c57a;
+  border-bottom: 1px solid #55c57a;
+  display: inline-block;
+  transition: all 0.2s;
+  position: relative;
+  padding: 3px; }
+
+.btn-text:hover {
+  transform: translateY(-0.2rem);
+  box-shadow: 0px 1rem 2rem rgba(0, 0, 0, 0.15);
+  background-color: #55c57a;
+  color: #fff; }
+
+.btn-text:active {
+  transform: translateY(0);
+  box-shadow: 0px 0.5rem 2rem rgba(0, 0, 0, 0.15); }

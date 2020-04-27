@@ -1,0 +1,15 @@
+* ,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit /* inherits this value from body box-sizing property */
+}
+
+html {
+    font-size: 62.5%; /*default font-size of browsers is 16px (100%), 62.5% means 10px */
+}
+
+body {
+    box-sizing: border-box
+}
