@@ -1,0 +1,22 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "landing page for na tours",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raja4net/natours.git"
+  },
+  "author": "Raja",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raja4net/natours/issues"
+  },
+  "homepage": "https://github.com/raja4net/natours#readme",
+  "devDependencies": {
+    "node-sass": "^4.14.0"
+  }
+}
