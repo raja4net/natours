@@ -35,6 +35,17 @@
             background-color: white;
         }
     }
+
+    &--green {
+        background-color:$color-primary;
+        color: white !important;
+        margin-top: 8rem;
+    
+        &::after {
+            background-color: $color-primary;
+            color: $color-white;
+        }
+    }
     
     &::after {
         content: "";
