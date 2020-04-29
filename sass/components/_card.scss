@@ -1,0 +1,106 @@
+.card {
+    perspective:150rem;
+    -moz-perspective: 150rem;
+    position: relative;
+    height: 52rem;
+    margin-top:5rem;
+    
+
+    &__side{
+        height: 52rem;
+        transition: transform 0.8s ease;
+        
+        position: absolute;
+        width: 100%;
+        top:0;
+        left:0;
+        backface-visibility: hidden;
+        border-radius: 3px;
+        box-shadow: 0rem 1.5rem 4.0rem rgba($color-black,0.15);
+        overflow: hidden ;//image in card overflows and hides corner radius
+
+        &--front{
+            background-color: $color-white;
+        }
+        &--back{
+            
+            transform: rotateY(-180deg);
+
+            &-1{
+                background-image: linear-gradient(to right bottom, $color-secondary-light,$color-secondary-dark);
+            }
+        }
+    }
+
+    &__heading{
+        font-weight: 300;
+        width: 60%;
+        font-size: 2.8rem;
+        text-transform: uppercase;
+        color: $color-white;
+        text-align: right;
+        position: absolute;
+        top: 12rem;
+        right: 2rem;
+    }
+
+    &__heading--span{
+        padding: 1rem 1.5rem;
+        -webkit-box-decoration-break:clone;
+        box-decoration-break: clone; //to give padding on left & right to both top and bottom line of heading
+        
+        &--1{
+            background-image: linear-gradient(to right bottom, 
+            rgba($color-secondary-light,0.85),
+            rgba($color-secondary-dark,0.85));
+        }
+
+    }
+
+    &__details {
+        padding: 3rem;
+        
+        ul {
+            list-style: none;
+            width:80%;
+            margin: 0 auto;
+
+            li {
+                font-size: 1.5rem;
+                text-align: center;
+                padding: 1rem;
+                
+                
+                &:not(:last-child){
+                    border-bottom: 0.1rem solid $color-grey-2;
+                }
+            }
+        }
+
+    }
+    
+    
+    &:hover &__side--front {
+        transform: rotateY(180deg);
+    }
+    &:hover &__side--back {
+        transform: rotateY(0deg);
+    }
+    //Styles on front picture 
+    &__picture{
+        background-size: cover;
+        height: 23rem;
+        background-blend-mode: screen;
+        -webkit-clip-path: polygon(0 0,100% 0, 100% 85%,0 100%);
+        clip-path: polygon(0 0,100% 0, 100% 85%,0 100%);
+        &--1{
+            background-image: linear-gradient(to right bottom, $color-secondary-light,$color-secondary-dark),url(../img/nat-5.jpg);
+        }
+        &--2{
+            
+        }
+        &--3{
+            
+        }
+    }
+}
