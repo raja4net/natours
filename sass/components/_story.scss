@@ -10,7 +10,6 @@
     transform: skewX(-12deg);
 
     &__shape {
-        background-color: orangered;
         width:15rem;
         height: 15rem;
         float: left;
@@ -20,12 +19,44 @@
         clip-path: circle(50% at 50% 50%);
         transform: translateX(-3rem) skewX(12deg) !important;
         background-size: cover;
+        position: relative;
+        backface-visibility: hidden;
     }
+
+    &__caption {
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%,20%);
+        color: white;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 1.7rem;
+        opacity: 0;
+        transition: all 0.5s;
+
+        
+    }
+
+    &:hover &__caption{
+        opacity:1;
+        transform: translate(-50%,-50%);
+    }
+
+    
 
     &__text { 
         transform: skewX(12deg);
     }
     &__image {
         height:100%; //height is taken of a parent lement i.e. __shape
+        transform:  translateX(-4rem) scale(1.4);
+        backface-visibility: hidden;
+    }
+
+    &:hover &__image {
+        transform: translateX(-4rem) scale(1);
+        filter: brightness(80%);
+        
     }
 }
