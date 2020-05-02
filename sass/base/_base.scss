@@ -8,6 +8,15 @@
 
 html {
     font-size: 62.5%; /*default font-size of browsers is 16px (100%), 62.5% means 10px */
+    @include respond(tab-land) {
+        font-size: 56.25% //1rem = 9px
+    }
+    @include respond(tab-port) {
+        font-size: 50% //1rem = 8px, we should mention tab-land before tab-port for desktop first strategy.
+    }
+    @include respond(big-desktop) {
+        font-size: 75% //1rem = 12px
+    }
 }
 
 body {
