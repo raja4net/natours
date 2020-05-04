@@ -9,6 +9,17 @@
     padding-left: 9rem;
     transform: skewX(-12deg);
 
+    @include respond(tab-port){
+    width: 100%;
+    padding:4rem;
+    padding-left: 7rem;
+    transform: skewX(0);
+    }
+
+    @include respond(phone) {
+        transform: skewX(0);
+    }
+
     &__shape {
         width:15rem;
         height: 15rem;
@@ -17,10 +28,17 @@
         -webkit-clip-path: circle(50% at 50% 50%);
         -webkit-shape-outside: circle(50% at 50% 50%);
         clip-path: circle(50% at 50% 50%);
-        transform: translateX(-3rem) skewX(12deg) !important;
+        transform: translateX(-3rem) skewX(12deg);
         background-size: cover;
         position: relative;
         backface-visibility: hidden;
+        @include respond(tab-port){
+            
+            transform: translateX(-3rem) skewX(0);
+            }
+        @include respond(phone) {
+            transform: translateX(-3rem) skewX(0);
+        }
     }
 
     &__caption {
@@ -43,20 +61,23 @@
         transform: translate(-50%,-50%);
     }
 
-    
-
     &__text { 
         transform: skewX(12deg);
+        @include respond(phone) {
+        transform: skewX(0);
+        }
     }
     &__image {
         height:100%; //height is taken of a parent lement i.e. __shape
         transform:  translateX(-4rem) scale(1.4);
         backface-visibility: hidden;
+        outline: none;
+        overflow:hidden;
+        
     }
 
     &:hover &__image {
         transform: translateX(-4rem) scale(1);
         filter: brightness(80%);
-        
     }
 }
